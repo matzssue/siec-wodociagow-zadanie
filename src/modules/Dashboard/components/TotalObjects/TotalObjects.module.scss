@@ -1,0 +1,30 @@
+@import '../../../../styles/variables';
+
+.total-objects-data {
+  display: flex;
+  gap: 20px;
+  width: (120px, 35%);
+  flex-direction: column;
+
+  .all,
+  .active,
+  .inactive {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 4px 3px 11px 1px rgb(20 20 20);
+    border-radius: 2rem;
+  }
+
+  .all {
+    background-color: $secondary-color;
+  }
+
+  .active {
+    background-color: $positive-color;
+  }
+
+  .inactive {
+    background-color: $negative-color;
+  }
+}

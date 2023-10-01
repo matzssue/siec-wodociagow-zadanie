@@ -1,0 +1,30 @@
+@import '../../../../styles/variables';
+
+.object-card {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color;
+  color: $primary-text-color;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 4px 3px 11px 1px rgb(20 20 20);
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .count {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .active {
+      color: $positive-color;
+    }
+
+    .inactive {
+      color: $negative-color;
+    }
+  }
+}

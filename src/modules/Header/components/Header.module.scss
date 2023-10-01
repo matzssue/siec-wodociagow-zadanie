@@ -1,0 +1,66 @@
+@import '../../../styles/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  height: $header-height;
+  background-color: $primary-color;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to left, #1a1d1b, #50731b) 1 0;
+
+  nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 1rem;
+
+    li {
+      a {
+        color: $primary-text-color;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 0.7rem 2rem;
+
+        &:hover {
+          background-color: #1b621c;
+          border-radius: 2rem;
+          box-shadow: 8px 7px 10px -6px #000;
+        }
+
+        &.active {
+          background-color: $positive-color;
+          border-radius: 2rem;
+          box-shadow: 8px 7px 10px -6px #000;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-medium) {
+  .header {
+    height: $header-height-mobile;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+
+      li {
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

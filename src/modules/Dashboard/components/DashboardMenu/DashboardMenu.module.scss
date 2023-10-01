@@ -1,0 +1,54 @@
+@import '../../../../styles/variables';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+  padding: 1rem;
+
+  h1 {
+    text-align: center;
+    color: $primary-text-color;
+    padding: 1rem 0.5rem;
+    background-color: $primary-color;
+  }
+
+  .total-objects {
+    display: flex;
+    align-items: center;
+    color: $primary-text-color;
+    padding: 1rem;
+    gap: 50px;
+    background-color: $primary-color;
+    font-size: 1.5rem;
+
+    .bar {
+      width: 65%;
+    }
+  }
+
+  .objects-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: $primary-color;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-medium) {
+  .menu {
+    display: block;
+
+    .total-objects {
+      font-size: 1rem;
+      flex-direction: column;
+
+      .bar {
+        display: flex;
+        width: 100%;
+      }
+    }
+  }
+}
