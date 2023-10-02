@@ -64,11 +64,7 @@ export const DashboardMenu = () => {
 
       <ul className={styles['objects-list']}>
         {objectsData.map((obj, i) => {
-          return (
-            <li key={i}>
-              <ObjectCard {...obj} />
-            </li>
-          );
+          return <ObjectCard key={i} {...obj} />;
         })}
       </ul>
     </div>
