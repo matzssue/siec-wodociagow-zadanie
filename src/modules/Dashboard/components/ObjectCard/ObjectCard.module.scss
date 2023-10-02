@@ -1,4 +1,4 @@
-@import '../../../../styles/variables';
+@import 'styles/variables';
 
 .object-card {
   display: flex;
@@ -25,6 +25,15 @@
 
     .inactive {
       color: $negative-color;
+    }
+  }
+}
+@media only screen and (max-width: $breakpoint-medium) {
+  .object-card {
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
