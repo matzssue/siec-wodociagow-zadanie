@@ -1,12 +1,15 @@
 import { Header } from '../modules/Header/components/Header';
 import { MultigraphNetwork } from '../modules/MultigraphNetwork/components/MultigraphNetwork';
-import { Wrapper } from '../common/Wrapper/Wrapper';
+import { Box } from '../common/Box/Box';
+import { Wrapper } from 'src/common/Wrapper/Wrapper';
 
 export const Graph = () => {
   return (
-    <Wrapper>
+    <Box>
       <Header />
-      <MultigraphNetwork />
-    </Wrapper>
+      <Wrapper>
+        <MultigraphNetwork />
+      </Wrapper>
+    </Box>
   );
 };
