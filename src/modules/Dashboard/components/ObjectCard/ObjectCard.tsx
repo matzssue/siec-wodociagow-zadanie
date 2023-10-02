@@ -44,7 +44,7 @@ export const ObjectCard = ({ name, active, inactive, total }: ManagedObjectData)
   };
 
   return (
-    <div className={styles['object-card']}>
+    <li className={styles['object-card']}>
       <p className={styles.title}>{name}</p>
       <div className={styles.count}>
         <span>Łącznie: {total}</span>
@@ -54,6 +54,6 @@ export const ObjectCard = ({ name, active, inactive, total }: ManagedObjectData)
       <div>
         <Bar options={options} data={data} />
       </div>
-    </div>
+    </li>
   );
 };
