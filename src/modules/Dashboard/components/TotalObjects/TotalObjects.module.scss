@@ -1,4 +1,4 @@
-@import '../../../../styles/variables';
+@import 'styles/variables';
 
 .total-objects-data {
   display: flex;
@@ -26,5 +26,11 @@
 
   .inactive {
     background-color: $negative-color;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-large) {
+  .total-objects-data {
+    font-size: 1rem;
   }
 }

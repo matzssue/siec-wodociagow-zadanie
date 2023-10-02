@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import { MRT_Localization_PL } from 'material-react-table/locales/pl';
 import { ManagedObjects, objects } from 'src/modules/Dashboard/constants/objects';
 
-export const ObjectTable = () => {
+export const ObjectsTable = () => {
   const columns = useMemo<MRT_ColumnDef<ManagedObjects>[]>(
     () => [
       {
