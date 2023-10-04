@@ -1,49 +1,40 @@
-import styles from './DashboardMenu.module.scss';
-import { getObjectsData } from '../../utils/getStationData';
-import { ObjectCard } from '../ObjectCard/ObjectCard';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { TotalObjects } from '../TotalObjects/TotalObjects';
+
 import { objects } from '../../constants/objects';
+import { getObjectsData } from '../../utils/getObjectsData';
+import { ObjectCard } from '../ObjectCard/ObjectCard';
+import { TotalObjects } from '../TotalObjects/TotalObjects';
+
+import styles from './DashboardMenu.module.scss';
+
+const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top' as const,
+    },
+    title: {
+      display: true,
+      text: 'Liczba obiektów',
+    },
+  },
+};
 
 export const DashboardMenu = () => {
-  const { objectsData, totalObjects, totalActive, totalInactive } = getObjectsData(objects);
-
-  ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top' as const,
-      },
-      title: {
-        display: true,
-        text: 'Liczba obiektów',
-      },
-    },
-  };
+  const { objectsData, totalActive, totalInactive, totalObjects } = getObjectsData(objects);
 
   const data = {
     labels: ['Wszystkie obiekty'],
     datasets: [
       {
-        label: 'Aktywne',
-        data: [totalActive],
         backgroundColor: '#137813',
+        data: [totalActive],
+        label: 'Aktywne',
       },
       {
-        label: 'Nieaktywne',
-        data: [totalInactive],
         backgroundColor: '#de1b1b',
+        data: [totalInactive],
+        label: 'Nieaktywne',
       },
     ],
   };
@@ -58,14 +49,14 @@ export const DashboardMenu = () => {
           totalObjects={totalObjects}
         />
         <div className={styles.bar}>
-          <Bar options={options} data={data} />
+          <Bar data={data} options={options} />
         </div>
       </div>
 
       <ul className={styles['objects-list']}>
-        {objectsData.map((obj, i) => {
-          return <ObjectCard key={i} {...obj} />;
-        })}
+        {objectsData.map((obj, i) => (
+          <ObjectCard key={obj.name + i} {...obj} />
+        ))}
       </ul>
     </div>
   );
