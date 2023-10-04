@@ -1,19 +1,10 @@
-import styles from './ObjectCard.module.scss';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+
 import { ManagedObjectData } from '../../types';
 
-export const ObjectCard = ({ name, active, inactive, total }: ManagedObjectData) => {
-  ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+import styles from './ObjectCard.module.scss';
 
+export const ObjectCard = ({ active, inactive, name, total }: ManagedObjectData) => {
   const options = {
     responsive: true,
     plugins: {
@@ -52,7 +43,7 @@ export const ObjectCard = ({ name, active, inactive, total }: ManagedObjectData)
         <span className={styles.inactive}>Nieaktywne: {inactive}</span>
       </div>
       <div>
-        <Bar options={options} data={data} />
+        <Bar data={data} options={options} />
       </div>
     </li>
   );
